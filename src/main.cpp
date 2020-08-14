@@ -1,8 +1,8 @@
 #include <Arduino.h>
 #include "Keyboard.h"
 
-bool imprime = false;
-String mensagem;
+bool showMessage = false;
+String message;
 
 void setup() {
   Serial.begin(115200);
@@ -11,24 +11,25 @@ void setup() {
   Serial.println("Stream Deck Ready!");
 }
 
+
 void loop() {
   int value = analogRead(A0);
   delay(50);
 
   if(value > 10) {
     if( value < 200) {
-      mensagem = "Botao 1";
-      imprime = true;
+      message = "Button 1";
+      showMessage = true;
     } else if(value < 390) {
-      mensagem = "Botao 2";
-      imprime = true;
+      message = "Button 2";
+      showMessage = true;
     } else if(value < 900) {
-      mensagem = "Botao 3";
-      imprime = true;
+      message = "Button 3";
+      showMessage = true;
     }
   }
 
-  if(imprime) {
+  if(showMessage) {
     Keyboard.press(KEY_LEFT_CTRL);
     Keyboard.press(KEY_LEFT_ALT);
     Keyboard.press(KEY_LEFT_SHIFT);
@@ -36,6 +37,6 @@ void loop() {
     delay(100);
     Keyboard.releaseAll();
     delay(1000);
-    imprime = false;
+    showMessage = false;
   }
 }
