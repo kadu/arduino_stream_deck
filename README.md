@@ -63,3 +63,7 @@ Just connect on "StreamDeckBLE" on your Bluetooth, go to OBS Settings -> Hot Key
 **BE HAPPY**
 
 https://oshwlab.com/nicodemosbr/streamdeck_ble
+
+**Next Steps**
+
+Create a 3D Printed case
