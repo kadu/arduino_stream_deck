@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 #include <BleKeyboard.h>
+#include <WiFi.h>
 #include <OneButton.h>
 
 #define btn1 23
@@ -30,17 +31,16 @@ OneButton button_9(btn9);
 void sendCommand(uint8_t LETTER) {
   pixels.setPixelColor(1, pixels.Color(0,0,255));
   pixels.show();
-  Serial.printf("LETTER => %c\n", char(LETTER));
-
   bleKeyboard.press(KEY_RIGHT_CTRL);
   bleKeyboard.press(KEY_RIGHT_ALT);
   bleKeyboard.press(KEY_RIGHT_SHIFT);
   bleKeyboard.press(LETTER);
 
-  delay(100);
+  delay(50);
   bleKeyboard.releaseAll();
   pixels.setPixelColor(1, pixels.Color(0,0,0));
   pixels.show();
+  Serial.println("Sended " + LETTER);
 }
 
 void btn1_function() {
@@ -80,7 +80,9 @@ void btn9_function() {
 }
 
 void setup() {
-  Serial.begin(115200);
+  WiFi.disconnect(true);  // Disconnect from the network
+  WiFi.mode(WIFI_OFF);    // Switch WiFi off
+  delay(12);
   bleKeyboard.begin();
 
   button_1.attachClick(btn1_function);
@@ -93,14 +95,20 @@ void setup() {
   button_8.attachClick(btn8_function);
   button_9.attachClick(btn9_function);
 
+  button_1.setClickTicks(200);
+  button_2.setClickTicks(200);
+  button_3.setClickTicks(200);
+  button_4.setClickTicks(200);
+  button_5.setClickTicks(200);
+  button_6.setClickTicks(200);
+  button_7.setClickTicks(200);
+  button_8.setClickTicks(200);
+  button_9.setClickTicks(200);
+
   pixels.begin();
   pixels.clear();
   pixels.setBrightness(20);
-  // pixels.fill(pixels.Color(255,0,0));
-  // pixels.setPixelColor(0, pixels.Color(0,100,0));
-  // pixels.setPixelColor(1, pixels.Color(128,0,128));
   pixels.show();
-  Serial.println("\nStarted!");
 }
 
 void loop() {
