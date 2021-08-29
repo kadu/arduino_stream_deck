@@ -79,4 +79,11 @@ We have some pictures of this battle:
 and now, the "printed version"
 
 ![3d case 01](assets/teclado_frente.png "3D Case")
-![3d case 02](assets/teclado_frente.png "3D Case")
+![3d case 02](assets/teclado_traseira.png "3D Case")
+
+We decided to have a 18650 battery on it, and for this, we use these components:
+- MT3608 - Step UP Conversor
+- TP4056 - Single Cell Li-ion battery charger
+- Button Switch.
+
+Is possible to use TP4056 with step up on IT, but will need some hack on the printed case.
