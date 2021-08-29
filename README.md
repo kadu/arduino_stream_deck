@@ -64,6 +64,19 @@ Just connect on "StreamDeckBLE" on your Bluetooth, go to OBS Settings -> Hot Key
 
 https://oshwlab.com/nicodemosbr/streamdeck_ble
 
-**Next Steps**
+**3D Case**
 
-Create a 3D Printed case
+To create this 3D case I had to win several battles, it was hours and hours fighting with myself and Fusion 360. But I got the help of knights who joined me and helped me build this case. Here is my thanks to @Leo_Churrasqueiro, a brilliant warrior who detached from several moments helping me in the battle, and to @psampaiobh who made excellent Fusion 360 tutorials that served as a tips guide and helped me better understand this 360-head Hydra ;)
+
+And a special thanks to all that guys that were in twitch chat helping us!
+
+We have some pictures of this battle:
+![Wireframe](assets/wireframe.png "Wireframe")
+
+![With lid](assets/lado_comtampa.png "With lid")
+![Without lid](assets/lado_semtampa.png "Without lid")
+
+and now, the "printed version"
+
+![3d case 01](assets/teclado_frente.png "3D Case")
+![3d case 02](assets/teclado_frente.png "3D Case")
